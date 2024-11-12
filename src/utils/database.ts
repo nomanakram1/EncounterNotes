@@ -1,9 +1,11 @@
+require("dotenv").config();
 import { CosmosClient } from "@azure/cosmos";
-require("dotenv").config(); // Load environment variables
 
+console.log("process.env.COSMOS_DB_KEY")
+console.log(process.env.COSMOS_DB_KEY)
 // Initialize the Cosmos DB client once
 export const client = new CosmosClient({
-    endpoint: process.env.COSMOS_DB_ENDPOINT || "https://halai-cosmosdb.documents.azure.com:443/",
+    endpoint: process.env.COSMOS_DB_ENDPOINT,
     key: process.env.COSMOS_DB_KEY
 });
 
